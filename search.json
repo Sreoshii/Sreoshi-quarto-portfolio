@@ -1,0 +1,30 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome to My Data Visualization Portfolio",
+    "section": "",
+    "text": "This portfolio demonstrates how Quarto can seamlessly integrate Python code and visualizations into professional documents. The chart below is created using matplotlib and embedded directly into this document."
+  },
+  {
+    "objectID": "index.html#about-this-portfolio",
+    "href": "index.html#about-this-portfolio",
+    "title": "Welcome to My Data Visualization Portfolio",
+    "section": "",
+    "text": "This portfolio demonstrates how Quarto can seamlessly integrate Python code and visualizations into professional documents. The chart below is created using matplotlib and embedded directly into this document."
+  },
+  {
+    "objectID": "index.html#featured-project",
+    "href": "index.html#featured-project",
+    "title": "Welcome to My Data Visualization Portfolio",
+    "section": "Featured Project",
+    "text": "Featured Project\n\nSimple Line Chart with Matplotlib\nA clean line chart showing data trends over time:\n\n\nCode\nimport matplotlib.pyplot as plt\nimport numpy as np\nimport pandas as pd\nfrom datetime import datetime, timedelta\n\n# Generate sample time series data\ndates = pd.date_range(start='2024-01-01', end='2024-12-31', freq='ME')\nvalues = [100, 105, 98, 112, 108, 115, 120, 118, 125, 130, 135, 140]\n\n# Create the line chart\nplt.figure(figsize=(12, 6))\nplt.plot(dates, values, marker='o', linewidth=2, markersize=6, color='#2E86AB')\n\n# Customize the chart\nplt.title('Monthly Data Trends - 2024', fontsize=16, fontweight='bold', pad=20)\nplt.xlabel('Month', fontsize=12)\nplt.ylabel('Value', fontsize=12)\nplt.grid(True, alpha=0.3)\nplt.xticks(rotation=45)\n\n# Add some styling\nplt.tight_layout()\nplt.show()\n\n# Display summary statistics\nprint(f\"Starting value: {values[0]}\")\nprint(f\"Ending value: {values[-1]}\")\nprint(f\"Total growth: {values[-1] - values[0]} ({((values[-1] - values[0]) / values[0] * 100):.1f}%)\")\nprint(f\"Average value: {np.mean(values):.1f}\")\n\n\n\n\n\n\n\n\n\nStarting value: 100\nEnding value: 140\nTotal growth: 40 (40.0%)\nAverage value: 117.2\n\n\n\n\nSimple Bar Chart with Matplotlib\nA clean bar chart showing categorical data:\n\n\nCode\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n# Sample data for bar chart\ncategories = ['Category A', 'Category B', 'Category C', 'Category D', 'Category E']\nvalues = [23, 45, 56, 78, 32]\n\n# Create the bar chart\nplt.figure(figsize=(10, 6))\nbars = plt.bar(categories, values, color=['#FF6B6B', '#4ECDC4', '#45B7D1', '#96CEB4', '#FFEAA7'])\n\n# Customize the chart\nplt.title('Sample Bar Chart - Category Comparison', fontsize=16, fontweight='bold', pad=20)\nplt.xlabel('Categories', fontsize=12)\nplt.ylabel('Values', fontsize=12)\nplt.xticks(rotation=45, ha='right')\n\n# Add value labels on top of bars\nfor bar, value in zip(bars, values):\n    plt.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 1, \n             str(value), ha='center', va='bottom', fontweight='bold')\n\nplt.tight_layout()\nplt.show()\n\n# Display summary statistics\nprint(f\"Total values: {sum(values)}\")\nprint(f\"Average value: {np.mean(values):.1f}\")\nprint(f\"Maximum value: {max(values)} in {categories[values.index(max(values))]}\")\nprint(f\"Minimum value: {min(values)} in {categories[values.index(min(values))]}\")\n\n\n\n\n\n\n\n\n\nTotal values: 234\nAverage value: 46.8\nMaximum value: 78 in Category D\nMinimum value: 23 in Category A\n\n\n\n\nSimple Scatter Plot with Matplotlib\nA scatter plot showing random data points with different colors:\n\n\nCode\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n# Generate random data for scatter plot\nnp.random.seed(42)\nn_points = 100\nx = np.random.randn(n_points)\ny = 2 * x + np.random.randn(n_points) * 0.5\ncolors = np.random.rand(n_points)\nsizes = 100 * np.random.rand(n_points)\n\n# Create the scatter plot\nplt.figure(figsize=(10, 6))\nscatter = plt.scatter(x, y, c=colors, s=sizes, alpha=0.6, cmap='viridis', edgecolors='black', linewidth=0.5)\n\n# Customize the chart\nplt.title('Random Data Points - Scatter Plot', fontsize=16, fontweight='bold', pad=20)\nplt.xlabel('X Values', fontsize=12)\nplt.ylabel('Y Values', fontsize=12)\nplt.grid(True, alpha=0.3)\n\n# Add colorbar\ncbar = plt.colorbar(scatter)\ncbar.set_label('Color Value', fontsize=12)\n\n# Add trend line\nz = np.polyfit(x, y, 1)\np = np.poly1d(z)\nplt.plot(x, p(x), \"r--\", alpha=0.8, linewidth=2, label=f'Trend line (y={z[0]:.2f}x+{z[1]:.2f})')\nplt.legend()\n\nplt.tight_layout()\nplt.show()\n\n# Display summary statistics\nprint(f\"Number of data points: {n_points}\")\nprint(f\"X range: {x.min():.2f} to {x.max():.2f}\")\nprint(f\"Y range: {y.min():.2f} to {y.max():.2f}\")\nprint(f\"Correlation coefficient: {np.corrcoef(x, y)[0, 1]:.3f}\")\nprint(f\"Trend line equation: y = {z[0]:.3f}x + {z[1]:.3f}\")\n\n\n\n\n\n\n\n\n\nNumber of data points: 100\nX range: -2.62 to 1.85\nY range: -5.10 to 4.10\nCorrelation coefficient: 0.965\nTrend line equation: y = 1.928x + 0.004"
+  },
+  {
+    "objectID": "index.html#skills-technologies",
+    "href": "index.html#skills-technologies",
+    "title": "Welcome to My Data Visualization Portfolio",
+    "section": "Skills & Technologies",
+    "text": "Skills & Technologies\n\nData Analysis: Python, pandas, numpy\nVisualization: Matplotlib, Seaborn\nTools: Jupyter, Quarto, Git\nStatistics: Descriptive & Inferential Statistics"
+  }
+]
