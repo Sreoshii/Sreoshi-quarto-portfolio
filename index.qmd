@@ -1,6 +1,17 @@
 ---
 title: "Welcome to My Data Visualization Portfolio"
 subtitle: "Hello! My nickname is SreoshiC. This is my Quarto data visualization portfolio showcasing my Python and matplotlib skills."
+author: "SreoshiC"
+date: today
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+execute:
+  echo: true
+  warning: false
+  message: false
+  eval: true
 ---
 
 ## About This Portfolio
