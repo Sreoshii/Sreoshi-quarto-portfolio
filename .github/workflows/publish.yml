@@ -15,14 +15,19 @@ jobs:
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
 
-     
-      - name: Install Jupyter
+      # 🟢 Install Python and required libraries
+      - name: Install Python and dependencies
         run: |
-          python3 -m pip install jupyter nbformat
+          sudo apt-get update
+          sudo apt-get install python3-pip -y
+          python3 -m pip install --upgrade pip
+          python3 -m pip install jupyter nbformat matplotlib pandas numpy
 
+      # 🧱 Render your Quarto website
       - name: Render site
         run: quarto render
 
+      # 🚀 Publish to GitHub Pages
       - name: Publish to GitHub Pages
         uses: quarto-dev/quarto-actions/publish@v2
         with:
