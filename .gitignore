@@ -131,7 +131,7 @@ dmypy.json
 # Quarto specific
 .quarto/
 _site/
-docs/
+
 *.quarto-pub
 
 # R specific (if using R with Quarto)
